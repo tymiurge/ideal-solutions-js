@@ -1,7 +1,7 @@
 /**
  * binding Array.prototype.concat function to an array might be used to pass the binded function 
  * as an argument to another function 
- * for exemple when you need iteratively concat arrays to an accumulating one 
+ * for example when you need iteratively concat arrays to an accumulator 
  * @see promises/runSerialPromises
  */
 const arr1 = [1, 2, 3]
