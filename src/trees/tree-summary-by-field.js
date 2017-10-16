@@ -21,7 +21,6 @@
  * 
  */
 
- 
 import React, { Component } from 'react'
 import { Container, Table, Icon, Button, Popup, Input } from 'semantic-ui-react'
 import TreeGrid from './tree-grid'
@@ -231,13 +230,21 @@ class RunsHistory extends Component {
     }
 
     render() {
-        //const normilizedItems = this.normilize(items, ['run1', 'run2', 'run3', 'run4', 'run5'])
-        let summarizedTree = this.fieldsMapper(items, ['run1', 'run2', 'run3', 'run4', 'run5'])
-        
-        console.log('finished')
+        let summarizedTree = this.fieldsMapper(items, fields.map(field => field.field))
+        summarizedTree = Object.values(summarizedTree)
         return (
             <Container>
-                <TreeGrid treeField={treeField} fields={fields} treeNodes={items} />
+                <TreeGrid
+                    treeField={treeField}
+                    fields={fields}
+                    treeNodes={summarizedTree}
+                    formatter={value => {
+                        if (typeof value === 'string') return value
+                        if (value.hasOwnProperty('failed')) return 'F'
+                        if (!value.hasOwnProperty('failed') && !value.hasOwnProperty('passed') && value.hasOwnProperty('skipped')) return 'S'
+                        return 'P'
+                    }}
+                />
             </Container>
         )
     }
