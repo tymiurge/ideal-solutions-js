@@ -6,8 +6,8 @@ var b = {
 	'failed': 3, 
   'skipped': 1
 }
-function sumObjects() {
-  return Array.from(arguments).reduce((accumulator, current) => {
+function objectKeysSum(arr) {
+  return arr.reduce((accumulator, current) => {
     for (let key in current) {
       if (current.hasOwnProperty(key))
         accumulator[key] = (accumulator[key] || 0) + current[key];
@@ -16,6 +16,6 @@ function sumObjects() {
   }, {});
 }
 
-var obj = sumObjects(a, b)
+var obj = objectKeysSum([a, b])
 
 alert('failed = ' + obj.failed)
