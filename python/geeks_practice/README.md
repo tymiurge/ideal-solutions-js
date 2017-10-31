@@ -1,0 +1,1 @@
+to run tests: python -m unittest2 discover -p 'test_*.py'
