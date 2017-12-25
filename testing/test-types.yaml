@@ -1,1 +1,59 @@
-test: as
+# TEST TYPES
+installation:
+compatibility:
+smoke:
+  defs: 
+    def1: | Smoke testing is an approach where all areas of the software application are tested
+          | without getting into too deep
+    def2: | Minimal attempts to operate the software, designed to determine whether there are any 
+          | basic problems that will prevent it from working at all
+sanity:
+  defs: 
+    def1: | it is a narrow regression testing with a focus on one or a small set of areas of functionality 
+          | of the software application
+    def2: | determines whether it is reasonable to proceed with further testing
+regression:
+#################################################################################################################################
+acceptance:
+  def:    | Acceptance Testing is a level of the software testing where a system is tested for acceptability. 
+          | The purpose of this test is to evaluate the system's compliance with the business requirements and 
+          | assess whether it is acceptable for delivery. Definition by ISTQB.
+  types: [
+    - Alpha & Beta Testing,
+    - Contract Acceptance Testing,
+    - Regulation Acceptance Testing,
+    - Operational Acceptance Testing:
+          | Operational Readiness Testing or Production Acceptance Testing, these test cases ensure there are 
+          | workflows in place to allow the software or system to be used.
+          | This should include workflows for backup plans, user training, and various maintenance processes and security checks.
+  ]
+#################################################################################################################################
+alpha:
+  def:    | Normally takes place in the development environment and is usually done by internal staff 
+          | – long before the product is even released to external testers or customers. Alpha Testing can also 
+          | be done by potential user groups, but the important thing here is that it takes place in 
+          | the development environment.
+beta:
+  def:    | Also known as “field testing”, takes place in the customer’s environment and involves some extensive testing 
+          | by a group of customers who use the system in their environment.
+functional:
+continuous:
+  def: 
+destructive:
+  def: 
+performance:
+usability:
+accessibility:
+  def: 
+security:
+internationalization:
+localization:
+development:
+  def: 
+A/B_testing:
+  def: 
+concurrent_testing:
+  def: 
+conformance_testing:
+  notes:
+    note1: or types testing

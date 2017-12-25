@@ -1,0 +1,32 @@
+test double:
+  - dummy object
+  - test stub
+  - test spy
+  - mock object
+  - fake object
+
+dummy object:
+  - is really an alternative to the value patterns
+
+test stub:
+  - 1: .. so that the test has a control point
+       for the indirect inputs of the SUT (system under testing)
+  - variations:
+    - responder injects valid values
+    - saboteur injects errors or exceptions
+test spy: 
+  - 1: Test Spy (page 538), as
+       an observation point for the indirect outputs of the SUT. Like a Test Stub, a
+       Test Spy may need to provide values to the SUT in response to method calls.
+       The Test Spy, however, also captures the indirect outputs of the SUT as it is
+       exercised and saves them for later verifi cation by the test.
+test mock: 
+  - 1: We can use a Mock Object as an observation point to verify the indirect outputs
+       of the SUT as it is exercised. Typically, the Mock Object also includes the func-
+       tionality of a Test Stub in that it must return values to the SUT if it hasn’t already
+       failed the tests but the emphasis1 is on the verifi cation of the indirect outputs.
+fake object:
+  - 1: We use a Fake Object (page 551) to replace the functionality of a real DOC
+       in a test for reasons other than verifi cation of indirect inputs and outputs of
+       the SUT. Typically, a Fake Object implements the same functionality as the
+       real DOC but in a much simpler way.

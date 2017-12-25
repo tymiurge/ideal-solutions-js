@@ -1,0 +1,23 @@
+def: | Selenium is a suite of software tools used to automate web browser testing.
+tools:
+  - Selenium IDE:       | a Firefox plugin which is used to quickly and frequently execute simple test cases
+
+  - Selenium Grid:      | Selenium Grid is a server that allows tests to use web browser instances running on remote machines. 
+                        | With Selenium Grid, one server acts as the hub. Tests contact the hub to obtain access to browser instances. 
+                        | The hub has a list of servers that provide access to browser instances (WebDriver nodes), 
+                        | and lets tests use these instances. Selenium Grid allows running tests in parallel on multiple machines, 
+                        | and to manage different browser versions and browser configurations centrally 
+                        | (instead of in each individual test).
+                        | The ability to run tests on remote browser instances is useful to spread the load of testing across 
+                        | several machines, and to run tests in browsers running on different platforms or operating systems. 
+                        | The latter is particularly useful in cases where not all browsers to be used for testing can run on the 
+                        | same platform.
+
+  - Selenium WebDriver: | provides a programming interface to create and execute test cases.
+                        | The scheme might be presented as:
+                        |     test script -> {language API -> Web Driver Engine -> Browser API (os native)} -> browser
+                        |                    ______________________________________________________________
+                        |                         and all this staff in {} is Selenium Web Driver!
+
+- selenium based tools: 
+  - 
