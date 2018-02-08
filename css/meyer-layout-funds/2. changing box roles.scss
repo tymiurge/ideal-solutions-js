@@ -1,0 +1,42 @@
+/**
+    display, values: 
+        none | 
+        inline | block | inline-block | 
+        list-item | 
+        run-in | 
+        table | inline-table | table-row-group | table-header-group | 
+        table-footer-group | table-row | table-column-group | table-column | table-cell | 
+        table-caption | 
+        inherit
+ */
+
+ /**
+    example of inline: 
+     <ul id="rollcall">
+        <li>Bob C.</li>
+        <li>Marcio G.</li>
+        <li>Eric M.</li>
+        <li>Kat M.</li>
+        <li>Tristan N.</li>
+        <li>Arun R.</li>
+        <li>Doron R.</li>
+        <li>Susie W.</li>
+    </ul>
+
+    by applying the following rules:
+    #rollcall li {display: inline; border-right: 1px solid; padding: 0 0.33em;} 
+    #rollcall li:first-child {border-left: 1px solid;}
+    you'll see pic 2
+    
+  */
+
+  /**
+    An inline element can be a descendant of a block element, but the reverse is not true.
+    <span style="display: block;">
+        <p style="display: inline;">this is wrong!</p>
+    </span>
+    The markup will not validate because the block element (p) is nested inside an inline element 
+    (span). The changing of display roles does nothing to change this. display has its name 
+    because it affects how the element is displayed, not because it changes what kind of 
+    element it is.
+   */
