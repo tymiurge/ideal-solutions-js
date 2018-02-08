@@ -1,0 +1,34 @@
+/*   ================================ boxes  ================================*/
+
+/* Each element box has a content area at its center */
+/**
+    the content area is surrounded by optional amounts of
+    - padding (can't be negative)
+    - borders (can't be negative)
+    - margins (can be negative, always transperent!!!)
+ */
+
+ /**
+    Kinds of boxes and some important terms
+    - normal flow
+    - nonreplaced element (elmnt whose content is contained within
+      the document)
+    - replaced element (elemnt that serves as a placeholder
+      for something else - i.e. img)
+    - root element (html in html)
+    - block box - element that generate "new lines" both
+      before and after their boxes when in the normal flow
+      Any element can be made to generate a block box by declaring
+      display: block
+    - inline box - i.e. default span or strong - they done't
+      generate linebreaks
+      any element can be made "inline" by declaring
+      display: inline
+    - inline-block box: This is a box that is like a block box
+      internally, but acts like an inline box externally.
+      It acts similar to, but not quite the same as,
+      a replaced element. Imagine picking up a div and sticking
+      it into a line of text as if it were an inline image
+    - containing block: the containing block is the
+      “layout context” for a box.
+  */
