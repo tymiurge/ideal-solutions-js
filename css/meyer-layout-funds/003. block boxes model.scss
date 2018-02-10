@@ -1,0 +1,17 @@
+/*
+the complete model of block box(see 3.png):
+    - height, width
+    - inner edge
+    - padding
+    - border
+    - margin
+    - outer edge
+*/
+/*
+    box-sizing 
+        (content-box (d), padding-box, border-box, inherit)
+
+    content-box - w, h from outer edge ot outer edge
+    border-box - w, h from outer border edge to outer border edge
+
+*/
