@@ -1,0 +1,16 @@
+/*
+given: 
+li {margin-top: 10px; margin-bottom: 15px;}
+
+Each list item has a 10-pixel top margin and a 15-pixel bottom margin. 
+When the list is rendered, however, the distance between adjacent list 
+items is 
+    !!!!   15 pixels !!!!!, 
+    !!!!   not 25    !!!!!
+
+This happens because, along the vertical axis, adjacent margins 
+are collapsed. 
+In other words, the smaller of the two margins is eliminated 
+in favor of the larger.
+
+*/

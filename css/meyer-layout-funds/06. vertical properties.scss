@@ -1,0 +1,56 @@
+/*
+vertical formatting also has seven related properties: 
+margin-top,         border-top,     padding-top, 
+                      height, 
+padding-bottom,     border-bottom,  margin-bottom.
+
+!!!!!!!!
+The values of these seven properties must equal the height 
+of the block box’s contain‐ ing block.
+!!!!!!!!
+Only three of these seven properties may be set to auto: 
+the height of the element, and the top and bottom margins.
+!!!!!!!!
+If either margin-top or margin-bottom is set to auto for a block box 
+in the normal flow, they both automatically evaluate to 0. 
+A value of 0 unfortunately prevents easy vertical centering of 
+normal-flow boxes in their containing blocks. 
+It also means that if you set the top and bottom margins of 
+an element to auto, they are effectively reset to 0 
+and removed from the element box.
+!!!!!!!!
+*/
+/*
+<div style="height: 6em;">
+    <p style="height: 50%;">Half as tall</p>
+</div>
+
+will result in: 
+ _______________________________________
+|_______________________________________|
+|                                       |
+|                                       |
+|_______________________________________|
+|                                       |
+|                                       |
+|_______________________________________|
+
+<div style="height: auto;">
+    <p style="height: 50%;">NOT half as tall; height reset to auto</p>
+</div>
+will result in: 
+ _______________________________________
+|                                       |
+|_______________________________________|
+|                                       |
+|                                       |
+|_______________________________________|
+|                                       |
+|_______________________________________|
+
+The spaces between the paragraph borders and the div borders are the top and 
+bottom margins on the paragraphs
+
+
+
+*/

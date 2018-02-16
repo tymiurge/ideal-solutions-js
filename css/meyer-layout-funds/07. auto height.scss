@@ -1,0 +1,27 @@
+/*
+<div style="height: auto;background: silver;">
+    <p style="margin-top: 2em; margin-bottom: 2em;">
+        A paragraph!
+    </p>
+</div>
+<div 
+    style="height: auto; border-top: 1px solid; border-bottom: 1px solid;
+    background: silver;"
+>
+    <p style="margin-top: 2em; margin-bottom: 2em;">
+        Another paragraph!
+    </p>
+</div>
+
+will result in: 
+ _______________________________________
+|A paragraph!                           |
+|---------------------------------------|
+
+ _______________________________________
+|                                       |
+|Another paragraph!                     |
+|_______________________________________|
+
+
+*/
