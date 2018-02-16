@@ -1,0 +1,34 @@
+/*
+
+Anonymous text
+    This is any string of characters that is not contained within an inline element. 
+    Thus, in the markup <p> I'm <em>so</em> happy!</p>, the sequences “ I’m ” and “ happy!” are anonymous text. 
+    Note that the spaces are part of the text since a space is a character like any other.
+Em box
+    This is defined in the given font, otherwise known as the character box. 
+    Actual glyphs can be taller or shorter than their em boxes. In CSS, the value of font-size 
+    determines the height of each em box.
+Content area
+    In nonreplaced elements, the content area can be one of two things, 
+    and the CSS specification allows user agents to choose which one. 
+    The content area can be the box described by the em boxes of every character in the element, 
+    strung together; or it can be the box described by the character glyphs in the element. 
+    In this book, I use the em box definition for simplicity’s sake. 
+    In replaced elements, the content area is the intrinsic height of the element plus any margins, 
+    borders, or padding.
+Leading
+    Leading is the difference between the values of font-size and line-height. 
+    This difference is actually divided in half and is applied equally to the top and bottom of the content area. 
+    These additions to the content area are called, not surprisingly, half-leading. 
+    Leading is applied only to nonreplaced elements.
+Inline box
+    This is the box described by the addition of the leading to the content area. 
+    For nonreplaced elements, the height of the inline box of an element will be exactly equal 
+    to the value for line-height. For replaced elements, the height of the inline box of an element 
+    will be exactly equal to the content area, since leading is not applied to replaced elements.
+Line box
+    This is the shortest box that bounds the highest and lowest points of the inline boxes that are found 
+    in the line. In other words, the top edge of the line box is placed along the top of the highest 
+    inline box top, and the bottom of the line box is placed along the bottom of the lowest inline box bottom.
+
+*/
