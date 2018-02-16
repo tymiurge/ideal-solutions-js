@@ -1,0 +1,40 @@
+/*
+The “seven properties” of horizontal formatting are: 
+    margin-left,    border-left,    padding-left, 
+                        width, 
+    padding-right,  border-right,   margin-right. 
+
+These properties relate to the horizontal layout of block boxes.
+
+Setting to AUTO: Of these seven properties, only three may be set to auto: 
+    the width of the element’s content 
+    the left margin 
+    right margins. 
+The remaining properties must be set either to specific values or default to a width of zero.
+
+!!!!!!!!!
+the total of the seven horizontal properties always equals the width of the parent element. 
+!!!!!!!!!
+*/
+
+/*
+Given: 
+    <div>
+        <p>a paragraph</p>
+    </div>
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+div {width: 500px;}    
+p {margin-left: 100px; margin-right: 100px; width: auto;}
+will result in:
+
+|____100_____||_________p width = auto = 300_________||____100_____|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+div {width: 500px;}
+p {width: 300px; margin-left: auto; margin-right: auto;}
+will result in: 
+
+|____lm = aut = 100_____||_________p width = 300_________||____rm = auto =100_____|
+
+*/

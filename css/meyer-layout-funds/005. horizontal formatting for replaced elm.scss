@@ -1,0 +1,36 @@
+/*
+!!!!!!
+if width is auto, then the width of the element is the content’s 
+intrinsic width
+!!!!!!
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<img src="smile.svg" style="display: block; width: 25px; margin: 0;">
+<img src="smile.svg" style="display: block; width: 50px; margin: 0;">
+<img src="smile.svg" style="display: block; width: 100px; margin: 0;">
+will result into: 
+
+     _
+    |_|
+         ___
+        |   |
+        |___|
+               _____
+              |     |
+              |     |
+              |     |
+              |_____|
+
+
+The height of the elements also increases
+!!!!!!!!!!!!!!!
+When a replaced element’s width is changed from its intrinsic width, 
+the value of height is scaled to match, 
+unless height has been set to an explicit value of its own
+!!!!!!!!!!!!!!!
+The reverse is also true: 
+if height is set, but width is left as auto, then the width is scaled 
+proportionately to the change in height.
+!!!!!!!!!!!!!!!
+    
+*/
