@@ -8,6 +8,7 @@ Em box
     This is defined in the given font, otherwise known as the character box. 
     Actual glyphs can be taller or shorter than their em boxes. In CSS, the value of font-size 
     determines the height of each em box.
+    See pic 9 for more details
 Content area
     In nonreplaced elements, the content area can be one of two things, 
     and the CSS specification allows user agents to choose which one. 
@@ -30,5 +31,31 @@ Line box
     This is the shortest box that bounds the highest and lowest points of the inline boxes that are found 
     in the line. In other words, the top edge of the line box is placed along the top of the highest 
     inline box top, and the bottom of the line box is placed along the bottom of the lowest inline box bottom.
+*/
 
+/*
+Determination of the height of the inline box
+
+1.  Find the values of font-size and line-height for each inline 
+    nonreplaced ele‐ ment and text that is not part of a descendant inline 
+    element and combine them. This is done by subtracting the font-size from 
+    the line-height, which yields the leading for the box. The leading is split 
+    in half and applied to the top and bot‐ tom of each em box.
+2.  Find the values of height, margin-top, margin-bottom, padding-top, 
+    padding-bottom, border-top-width, and border-bottom-width for each 
+    replaced element and add them together.
+3.  Figure out, for each content area, how much of it is above the baseline 
+    for the overall line and how much of it is below the baseline. This is 
+    not an easy task: you must know the position of the baseline for each 
+    element and piece of anonymous text and the baseline of the line itself, 
+    and then line them all up. In addition, the bottom edge of a replaced 
+    element sits on the baseline for the overall line.
+4.  Determine the vertical offset of any elements that have been given a value 
+    for vertical-align. This will tell you how far up or down that element’s 
+    inline box will be moved, and it will change how much of the element is 
+    above or below the baseline.    
+5.  Now that you know where all of the inline boxes have come to rest, 
+    calculate the final line box height. To do so, just add the distance 
+    between the baseline and the highest inline box top to the distance 
+    between the baseline and the lowest inline box bottom.
 */
