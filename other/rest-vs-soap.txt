@@ -1,0 +1,4 @@
+﻿rest api vs soap api
+
+https://dzone.com/articles/difference-between-rest-and-soap-api
+
