@@ -31,3 +31,16 @@ Queue.prototype.get = function() {
     return this.dequeue()
 }
 
+/*
+ *
+ * and there is another problem - limiting visibility/access on/to method from parent class.
+ * example:
+ * var queue = new Queue()
+ * queue.dequeue() 
+ * the last statement can breack Queue functionality in case if the last builds own limitations (like 
+ * turning limited capacity on
+ *
+ * to sum up:
+ * - how to make so that methods from a parent class would be invisible for users of the Child one 
+ *
+ */
