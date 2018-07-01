@@ -44,3 +44,17 @@ Queue.prototype.get = function() {
  * - how to make so that methods from a parent class would be invisible for users of the Child one 
  *
  */
+
+/*
+ * and there is another problem:
+ * in case if there is a need to rewrite a method from a parent class and the parent class method
+ * has access to a private variable from the parent scope - the child class has to 
+ * completely recreate the mechanism of operating with the parent scope private variable
+ * example:
+ *
+ * //we're here trying to rewrite the enqueue method from Deck
+ * Queue.prototype.enqueue = function(node) {
+ * 	// the access to data from Deck scope is lost
+ * }
+ *
+ */
