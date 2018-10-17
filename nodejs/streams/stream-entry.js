@@ -85,3 +85,131 @@ readable.on('end', () => {
   writable.end();
 });
 
+/*
+=============================================================================================
+
+Events and functions of readable and Writable streams
+
+--events--                       --events--
+
+data                                drain
+end                                 finish
+error                               error
+close                               close
+read                                pipe/unpipe
+
+-- functions --                  -- functions --
+pipe(), unpipe()                     write()
+read(), unshift(), resume()          end()
+pause(), isPaused()                  cork(), uncork()
+setEncoding                          seDefaultEncoding
+
+drain  - a signal that the writable stream can receive more data.
+finish - event, which is emitted when all data has been flushed to the underlying system.
+
+The 'unpipe' event is emitted when the stream.unpipe() method is called on a Readable stream,
+removing this Writable from its set of destinations.
+
+*/
+
+/*
+implementing writable streams
+*/
+const { Writable } = require('stream');
+class myWritableStream extends Writable {
+}
+
+// or
+const { Writable } = require('stream');
+const outStream = new Writable({
+  write(chunk, encoding, callback) {
+    console.log(chunk.toString());
+    callback();
+  }
+});
+
+process.stdin.pipe(outStream);
+/*
+implement a readable stream
+*/
+const { Readable } = require('stream');
+const inStream = new Readable({
+  read() {}
+});
+
+// or
+const { Readable } = require('stream');
+const inStream = new Readable({
+  read() {}
+});
+inStream.push('ABCDEFGHIJKLM');
+inStream.push('NOPQRSTUVWXYZ');
+inStream.push(null); // No more data
+inStream.pipe(process.stdout);
+
+/* Implementing Duplex/Transform Streams */
+const { Duplex } = require('stream');
+
+const inoutStream = new Duplex({
+  write(chunk, encoding, callback) {
+    console.log(chunk.toString());
+    callback();
+  },
+
+  read(size) {
+    this.push(String.fromCharCode(this.currentCharCode++));
+    if (this.currentCharCode > 90) {
+      this.push(null);
+    }
+  }
+});
+
+inoutStream.currentCharCode = 65;
+process.stdin.pipe(inoutStream).pipe(process.stdout);
+/* implementing transform */
+const { Transform } = require('stream');
+
+const upperCaseTr = new Transform({
+  transform(chunk, encoding, callback) {
+    this.push(chunk.toString().toUpperCase());
+    callback();
+  }
+});
+
+process.stdin.pipe(upperCaseTr).pipe(process.stdout);
+//or
+const { Transform } = require('stream');
+const commaSplitter = new Transform({
+  readableObjectMode: true,
+  transform(chunk, encoding, callback) {
+    this.push(chunk.toString().trim().split(','));
+    callback();
+  }
+});
+const arrayToObject = new Transform({
+  readableObjectMode: true,
+  writableObjectMode: true,
+  transform(chunk, encoding, callback) {
+    const obj = {};
+    for(let i=0; i < chunk.length; i+=2) {
+      obj[chunk[i]] = chunk[i+1];
+    }
+    this.push(obj);
+    callback();
+  }
+});
+const objectToString = new Transform({
+  writableObjectMode: true,
+  transform(chunk, encoding, callback) {
+    this.push(JSON.stringify(chunk) + '\n');
+    callback();
+  }
+});
+process.stdin
+  .pipe(commaSplitter)
+  .pipe(arrayToObject)
+  .pipe(objectToString)
+  .pipe(process.stdout)
+
+
+
